@@ -100,13 +100,17 @@ ball6.forward(250)
 ball6.left(90)
 ball6.forward(350)
 ball6.showturtle()
+#Run functions
+if(ball1 == -250, 350):
+    drop_ball1()
 
 #Functions
 
-#def draw_the_balls():
-
-
-
+def drop_ball1():
+  ball1.penup()
+  ball1.goto(ball1.ycor(), -500)
+  ball1.hideturtle()
+  ball1.clear()
 
 
 
