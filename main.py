@@ -7,6 +7,7 @@ wn = trtl.Screen()
 startgame = trtl.Turtle()
 start_text = trtl.Turtle()
 number = 0
+value = 0
 ball1 = trtl.Turtle()
 ball2 = trtl.Turtle()
 ball3 = trtl.Turtle()
@@ -14,6 +15,8 @@ ball4 = trtl.Turtle()
 ball5 = trtl.Turtle()
 ball6 = trtl.Turtle()
 fontsetup = ("Arial", 15, "normal")
+color_list = ["green","red"]
+number_list = ["1","2"]
 #Variable setup
 #Setup wn
 wn.bgcolor("black")
@@ -86,11 +89,44 @@ ball6.forward(250)
 
 #Functions
 
+def ball_color():
+    global value
+    ball1.color(rand.choice(color_list))
+    if(ball1.color == "red"):
+        value += 1
+    else:
+        value += 2
+    ball2.color(rand.choice(color_list))
+    if (ball2.color == "red"):
+        value += 1
+    else:
+        value += 2
+    ball3.color(rand.choice(color_list))
+    if (ball3.color == "red"):
+        value += 1
+    else:
+        value += 2
+    ball4.color(rand.choice(color_list))
+    if (ball4.color == "red"):
+        value += 1
+    else:
+        value += 2
+    ball5.color(rand.choice(color_list))
+    if (ball5.color == "red"):
+        value += 1
+    else:
+        value += 2
+    ball6.color(rand.choice(color_list))
+    if (ball6.color == "red"):
+        value += 1
+    else:
+        value += 2
+    print(value)
 
 
 
 #Run functions
-
+ball_color()
 
 #-----function calls-----
 #startgame.onclick()
