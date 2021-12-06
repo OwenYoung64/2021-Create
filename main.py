@@ -83,10 +83,10 @@ ball6.forward(250)
 
 #Functions
 
-def ball_color():
+def ball_fillcolor():
     global greenvalue
     global redvalue
-    ball1.color(rand.choice(color_list))
+    ball1.fillcolor(rand.choice(color_list))
     #use fillcolor
     '''
     if(ball1.color == "green"):
@@ -94,21 +94,21 @@ def ball_color():
     else:
         redvalue += 1
         '''
-    ball2.color(rand.choice(color_list))
-    ball3.color(rand.choice(color_list))
-    ball4.color(rand.choice(color_list))
-    ball5.color(rand.choice(color_list))
-    ball6.color(rand.choice(color_list))
+    ball2.fillcolor(rand.choice(color_list))
+    ball3.fillcolor(rand.choice(color_list))
+    ball4.fillcolor(rand.choice(color_list))
+    ball5.fillcolor(rand.choice(color_list))
+    ball6.fillcolor(rand.choice(color_list))
 
-def ball_click():
-    if(ball1.color =="red"):
+#def ball_click():
+    #if(ball1.color =="red"):
 
 
 
 
 #Run functions
-ball_color()
-ball_click
+ball_fillcolor()
+#ball_click
 #-----function calls-----
 #startgame.onclick()
 wn.listen()
