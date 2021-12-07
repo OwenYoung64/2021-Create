@@ -16,7 +16,6 @@ ball4 = trtl.Turtle()
 ball5 = trtl.Turtle()
 ball6 = trtl.Turtle()
 fontsetup = ("Arial", 15, "normal")
-color_list = ["green","red"]
 #Variable setup
 #Setup wn
 wn.bgcolor("black")
@@ -84,24 +83,35 @@ ball6.forward(250)
 #Functions
 
 def ball_fillcolor():
-    global greenvalue
-    global redvalue
-    ball1.fillcolor(rand.choice(color_list))
-    #use fillcolor
-    '''
-    if(ball1.color == "green"):
-        greenvalue += 1
-    else:
-        redvalue += 1
-        '''
-    ball2.fillcolor(rand.choice(color_list))
-    ball3.fillcolor(rand.choice(color_list))
-    ball4.fillcolor(rand.choice(color_list))
-    ball5.fillcolor(rand.choice(color_list))
-    ball6.fillcolor(rand.choice(color_list))
+    color_list = ["green", "red", "red", "red", "red", "red"]
+    return_value = color_list.pop(rand.randint(0, 5))
+    print('Return Value:', return_value)
+    print('Updated List:', color_list)
+    ball1.fillcolor(return_value)
+    return_value = color_list.pop(rand.randint(0, 4))
+    print('Return Value:', return_value)
+    print('Updated List:', color_list)
+    ball2.fillcolor(return_value)
+    return_value = color_list.pop(rand.randint(0, 3))
+    print('Return Value:', return_value)
+    print('Updated List:', color_list)
+    ball3.fillcolor(return_value)
+    return_value = color_list.pop(rand.randint(0, 2))
+    print('Return Value:', return_value)
+    print('Updated List:', color_list)
+    ball4.fillcolor(return_value)
+    return_value = color_list.pop(rand.randint(0, 1))
+    print('Return Value:', return_value)
+    print('Updated List:', color_list)
+    ball5.fillcolor(return_value)
+    return_value = color_list.pop(rand.randint(0, 0))
+    print('Return Value:', return_value)
+    print('Updated List:', color_list)
+    ball6.fillcolor(return_value)
+
 
 #def ball_click():
-    #if(ball1.color =="red"):
+    #if(ball1.color == "red"):
 
 
 
