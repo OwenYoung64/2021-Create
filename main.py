@@ -6,9 +6,9 @@ import random as rand
 wn = trtl.Screen()
 startgame = trtl.Turtle()
 start_text = trtl.Turtle()
+counter = trtl.Turtle()
 number = 0
-greenvalue = 0
-redvalue = 0
+timer = 30
 ball1 = trtl.Turtle()
 ball2 = trtl.Turtle()
 ball3 = trtl.Turtle()
@@ -32,6 +32,10 @@ start_text.backward(20)
 start_text.right(90)
 start_text.forward(10)
 #start_text.write("Start", font=fontsetup)
+#Setup counter
+counter.forward(250)
+counter.right(90)
+counter.forward(100)
 #Setup ball1
 ball1.shape("circle")
 ball1.speed(0)
@@ -97,16 +101,19 @@ def ball_fillcolor():
     return_value = color_list.pop(rand.randint(0, 0))
     ball6.fillcolor(return_value)
 
+#def countdown():
+
 
 #def ball_click():
-    #if(ball1.color == "red"):
+    #if(ball1.fillcolor == "red"):
+
 
 
 
 
 #Run functions
 ball_fillcolor()
-#ball_click
+#ball_click()
 #-----function calls-----
 #startgame.onclick()
 wn.listen()
