@@ -1,3 +1,6 @@
+'''
+Difficulty between 1 and 5 to determine the size of the balls
+'''
 #2021 AP Creat Task
 #Imports
 import turtle as trtl
@@ -9,6 +12,7 @@ start_text = trtl.Turtle()
 counter = trtl.Turtle()
 number = 0
 timer = 30
+counternumber = 1000
 ball1 = trtl.Turtle()
 ball2 = trtl.Turtle()
 ball3 = trtl.Turtle()
@@ -33,9 +37,13 @@ start_text.right(90)
 start_text.forward(10)
 #start_text.write("Start", font=fontsetup)
 #Setup counter
+counter.fillcolor("white")
+counter.shape("square")
+counter.turtlesize(3)
+counter.penup()
 counter.forward(250)
 counter.right(90)
-counter.forward(100)
+counter.forward(150)
 #Setup ball1
 ball1.shape("circle")
 ball1.speed(0)
@@ -101,7 +109,17 @@ def ball_fillcolor():
     return_value = color_list.pop(rand.randint(0, 0))
     ball6.fillcolor(return_value)
 
-#def countdown():
+def countdown():
+    global timer, timerUp
+    counter.clear()
+    if timer <= 0:
+        timer -= 1
+        counter.write("time's up", font=fontsetup)
+        timerUp = True
+    else:
+        counter.write("timer: " + str(timer), font=fontsetup)
+        timer -= 1
+        counter.getscreen().ontimer(countdown, counternumber)
 
 
 #def ball_click():
