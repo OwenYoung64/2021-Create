@@ -12,6 +12,7 @@ start_text = trtl.Turtle()
 counter = trtl.Turtle()
 number = 0
 timer = 30
+timerup = False
 counternumber = 1000
 ball1 = trtl.Turtle()
 ball2 = trtl.Turtle()
@@ -19,7 +20,7 @@ ball3 = trtl.Turtle()
 ball4 = trtl.Turtle()
 ball5 = trtl.Turtle()
 ball6 = trtl.Turtle()
-fontsetup = ("Arial", 15, "normal")
+fontsetup = ("Arial", 15, "normal",)
 #Variable setup
 #Setup wn
 wn.bgcolor("black")
@@ -37,9 +38,7 @@ start_text.right(90)
 start_text.forward(10)
 #start_text.write("Start", font=fontsetup)
 #Setup counter
-counter.fillcolor("white")
-counter.shape("square")
-counter.turtlesize(3)
+counter.hideturtle()
 counter.penup()
 counter.forward(250)
 counter.right(90)
@@ -114,7 +113,7 @@ def countdown():
     counter.clear()
     if timer <= 0:
         timer -= 1
-        counter.write("time's up", font=fontsetup)
+        counter.write("time's up", font=fontsetup,)
         timerUp = True
     else:
         counter.write("timer: " + str(timer), font=fontsetup)
@@ -131,6 +130,7 @@ def countdown():
 
 #Run functions
 ball_fillcolor()
+countdown()
 #ball_click()
 #-----function calls-----
 #startgame.onclick()
