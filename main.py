@@ -39,6 +39,7 @@ start_text.forward(10)
 #start_text.write("Start", font=fontsetup)
 #Setup counter
 counter.hideturtle()
+counter.color("white")
 counter.penup()
 counter.forward(250)
 counter.right(90)
@@ -97,16 +98,28 @@ def ball_fillcolor():
     color_list = ["green", "red", "red", "red", "red", "red"]
     return_value = color_list.pop(rand.randint(0, 5))
     ball1.fillcolor(return_value)
+    ball1color = return_value
+    print(ball1color)
     return_value = color_list.pop(rand.randint(0, 4))
     ball2.fillcolor(return_value)
+    ball2color = return_value
+    print(ball2color)
     return_value = color_list.pop(rand.randint(0, 3))
     ball3.fillcolor(return_value)
+    ball3color = return_value
+    print(ball3color)
     return_value = color_list.pop(rand.randint(0, 2))
     ball4.fillcolor(return_value)
+    ball4color = return_value
+    print(ball4color)
     return_value = color_list.pop(rand.randint(0, 1))
     ball5.fillcolor(return_value)
+    ball5color = return_value
+    print(ball5color)
     return_value = color_list.pop(rand.randint(0, 0))
     ball6.fillcolor(return_value)
+    ball6color = return_value
+    print(ball6color)
 
 def countdown():
     global timer, timerUp
@@ -116,13 +129,16 @@ def countdown():
         counter.write("time's up", font=fontsetup,)
         timerUp = True
     else:
-        counter.write("timer: " + str(timer), font=fontsetup)
+        counter.write("time: " + str(timer), font=fontsetup)
         timer -= 1
         counter.getscreen().ontimer(countdown, counternumber)
 
 
-#def ball_click():
-    #if(ball1.fillcolor == "red"):
+def ball_click(ball1color, ball1):
+    if(ball1color == "red"):
+        print("Its red")
+    else:
+        print("its green")
 
 
 
@@ -131,8 +147,7 @@ def countdown():
 #Run functions
 ball_fillcolor()
 countdown()
-#ball_click()
 #-----function calls-----
-#startgame.onclick()
+ball1.onclick(ball_click)
 wn.listen()
 wn.mainloop()
