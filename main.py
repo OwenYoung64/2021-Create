@@ -143,7 +143,7 @@ def ball_click(ball1color, ball1):
 #Run functions
 ball_fillcolor()
 countdown()
-#-----function calls-----
+#-----function calls----- problem with onclick?
 ball1.onclick(ball_click)
 wn.listen()
 wn.mainloop()
