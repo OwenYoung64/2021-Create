@@ -135,14 +135,10 @@ def countdown():
 
 
 def ball_click(ball1color, ball1):
-    if(ball1color == "red"):
+    if ball1color != "green":
         print("Its red")
     else:
         print("its green")
-
-
-
-
 
 #Run functions
 ball_fillcolor()
