@@ -1,5 +1,5 @@
 '''
-Difficulty between 1 and 5 to determine the size of the balls
+Difficulty between 1 and 5 to determine the size of the balls, create score turtle
 '''
 #2021 AP Creat Task
 #Imports
@@ -13,6 +13,7 @@ counter = trtl.Turtle()
 number = 0
 timer = 30
 timerup = False
+score = 0
 counternumber = 1000
 ball1 = trtl.Turtle()
 ball2 = trtl.Turtle()
@@ -97,7 +98,7 @@ ball6.forward(250)
 def ball_fillcolor():
     global ball1color, ball2color, ball3color, ball4color, ball5color, ball6color, return_value
 
-    color_list = ["green", "green", "green", "red", "red", "red"]
+    color_list = ["green", "red", "red", "red", "red", "red"]
     return_value = color_list.pop(rand.randint(0, 5))
     ball1.fillcolor(return_value)
     ball1color = return_value
@@ -135,48 +136,53 @@ def countdown():
         timer -= 1
         counter.getscreen().ontimer(countdown, counternumber)
 
+def scoreadd(score):
+    score += 100
+
+def scoresubtract(score):
+    score -= 100
 
 def ball1_click(ball2color, ball1):
     color = "red"
     if ball1color == color:
-        print("Its red")
+        scoresubtract(score)
     else:
-        print("its green")
+        scoreadd(score)
 
 def ball2_click(ball1color, ball1):
     color = "red"
     if ball2color == color:
-        print("Its red")
+        scoresubtract(score)
     else:
-        print("its green")
+        scoreadd(score)
 
 def ball3_click(ball1color, ball1):
     color = "red"
     if ball3color == color:
-        print("Its red")
+        scoresubtract(score)
     else:
-        print("its green")
+        scoreadd(score)
 
 def ball4_click(ball2color, ball1):
     color = "red"
     if ball4color == color:
-        print("Its red")
+        scoresubtract(score)
     else:
-        print("its green")
+        scoreadd(score)
 
 def ball5_click(ball1color, ball1):
     color = "red"
     if ball5color == color:
-        print("Its red")
+        scoresubtract(score)
     else:
-        print("its green")
+        scoreadd(score)
 
 def ball6_click(ball1color, ball1):
     color = "red"
     if ball6color == color:
-        print("Its red")
+        scoresubtract(score)
     else:
-        print("its green")
+        scoreadd(score)
 
 #Run functions
 ball_fillcolor()
