@@ -95,7 +95,9 @@ ball6.forward(250)
 #Functions
 
 def ball_fillcolor():
-    color_list = ["green", "red", "red", "red", "red", "red"]
+    global ball1color, ball2color, ball3color, ball4color, ball5color, ball6color, return_value
+
+    color_list = ["green", "green", "green", "red", "red", "red"]
     return_value = color_list.pop(rand.randint(0, 5))
     ball1.fillcolor(return_value)
     ball1color = return_value
@@ -134,8 +136,44 @@ def countdown():
         counter.getscreen().ontimer(countdown, counternumber)
 
 
-def ball_click(ball1color, ball1):
-    if ball1color != "green":
+def ball1_click(ball2color, ball1):
+    color = "red"
+    if ball1color == color:
+        print("Its red")
+    else:
+        print("its green")
+
+def ball2_click(ball1color, ball1):
+    color = "red"
+    if ball2color == color:
+        print("Its red")
+    else:
+        print("its green")
+
+def ball3_click(ball1color, ball1):
+    color = "red"
+    if ball3color == color:
+        print("Its red")
+    else:
+        print("its green")
+
+def ball4_click(ball2color, ball1):
+    color = "red"
+    if ball4color == color:
+        print("Its red")
+    else:
+        print("its green")
+
+def ball5_click(ball1color, ball1):
+    color = "red"
+    if ball5color == color:
+        print("Its red")
+    else:
+        print("its green")
+
+def ball6_click(ball1color, ball1):
+    color = "red"
+    if ball6color == color:
         print("Its red")
     else:
         print("its green")
@@ -144,6 +182,11 @@ def ball_click(ball1color, ball1):
 ball_fillcolor()
 countdown()
 #-----function calls----- problem with onclick?
-ball1.onclick(ball_click)
 wn.listen()
+ball1.onclick(ball1_click)
+ball2.onclick(ball2_click)
+ball3.onclick(ball3_click)
+ball4.onclick(ball4_click)
+ball5.onclick(ball5_click)
+ball6.onclick(ball6_click)
 wn.mainloop()
