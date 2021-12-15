@@ -149,7 +149,6 @@ def scoresubtract(score):
     scorevalue = addedscore
     print(scorevalue)
 
-
 def ball1_click(ball2color, ball1):
     color = "red"
     if ball1color == color:
