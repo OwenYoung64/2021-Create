@@ -11,7 +11,7 @@ startgame = trtl.Turtle()
 start_text = trtl.Turtle()
 counter = trtl.Turtle()
 number = 0
-timer = 30
+timer = 10
 timerup = False
 score = 0
 scorevalue = 0
@@ -28,18 +28,16 @@ fontsetup = ("Arial", 15, "normal",)
 #Setup wn
 wn.bgcolor("black")
 #Setup startgame
-startgame.hideturtle()
 startgame.penup()
 startgame.shape("square")
 startgame.fillcolor("green")
 startgame.turtlesize(5)
 #Setup start_text
-start_text.hideturtle()
 start_text.penup()
 start_text.backward(20)
 start_text.right(90)
 start_text.forward(10)
-#start_text.write("Start", font=fontsetup)
+start_text.write("Start", font=fontsetup)
 #Setup counter
 counter.hideturtle()
 counter.color("white")
@@ -122,11 +120,23 @@ def countdown():
     if timer <= 0:
         timer -= 1
         counter.write("time's up", font=fontsetup,)
+        gamedone(scorevalue)
         timerUp = True
     else:
         counter.write("time: " + str(timer), font=fontsetup)
         timer -= 1
         counter.getscreen().ontimer(countdown, counternumber)
+
+def gamedone(scorevalue):
+    ball1.hideturtle()
+    ball2.hideturtle()
+    ball3.hideturtle()
+    ball4.hideturtle()
+    ball5.hideturtle()
+    ball6.hideturtle()
+    scorechanger.right(90)
+    scorechanger.forward(110)
+    scorechanger.write("Final score:", font=fontsetup)
 
 def scoreadd(score):
     global scorevalue
@@ -137,7 +147,6 @@ def scoreadd(score):
     scorechanger.write(scorevalue + score)
     scorevalue = addedscore
     ball_fillcolor()
-    print(scorevalue)
 
 def scoresubtract(score):
     global scorevalue
@@ -147,7 +156,6 @@ def scoresubtract(score):
     scorechanger.clear()
     scorechanger.write(scorevalue + score)
     scorevalue = addedscore
-    print(scorevalue)
 
 def ball1_click(ball2color, ball1):
     color = "red"
@@ -191,11 +199,16 @@ def ball6_click(ball1color, ball1):
     else:
         scoreadd(score)
 
+def gamestart():
+    startgame.hideturtle()
+    start_text.clear()
+    ball_fillcolor()
+    countdown()
+
 #Run functions
-ball_fillcolor()
-countdown()
 #-----function calls----- problem with onclick?
 wn.listen()
+startgame.onclick(gamestart)
 ball1.onclick(ball1_click)
 ball2.onclick(ball2_click)
 ball3.onclick(ball3_click)
