@@ -209,7 +209,6 @@ def gamestart(ball1, ball2):
     ball_fillcolor()
     countdown()
 
-
 #Run functions
 #-----function calls----- problem with onclick?
 wn.listen()
