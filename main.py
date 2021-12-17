@@ -1,29 +1,26 @@
-'''
-Difficulty between 1 and 5 to determine the size of the balls, create score turtle
-'''
 #2021 AP Creat Task
 #Imports
 import turtle as trtl
 import random as rand
 #Variables
 wn = trtl.Screen()
-startgame = trtl.Turtle()
-start_text = trtl.Turtle()
-counter = trtl.Turtle()
 number = 0
-timer = 10
-timerup = False
+timer = 30
 score = 0
 scorevalue = 0
 counternumber = 1000
+fontsetup = ("Arial", 15, "normal",)
+timerup = False
 scorechanger = trtl.Turtle()
+startgame = trtl.Turtle()
+start_text = trtl.Turtle()
+counter = trtl.Turtle()
 ball1 = trtl.Turtle()
 ball2 = trtl.Turtle()
 ball3 = trtl.Turtle()
 ball4 = trtl.Turtle()
 ball5 = trtl.Turtle()
 ball6 = trtl.Turtle()
-fontsetup = ("Arial", 15, "normal",)
 #Variable setup
 #Setup wn
 wn.bgcolor("black")
@@ -32,11 +29,17 @@ startgame.penup()
 startgame.shape("square")
 startgame.fillcolor("green")
 startgame.turtlesize(5)
+startgame.hideturtle()
+startgame.left(90)
+startgame.forward(100)
+startgame.showturtle()
 #Setup start_text
 start_text.penup()
+start_text.hideturtle()
 start_text.backward(20)
 start_text.right(90)
 start_text.forward(10)
+start_text.backward(100)
 start_text.write("Start", font=fontsetup)
 #Setup counter
 counter.hideturtle()
@@ -119,7 +122,7 @@ def countdown():
     counter.clear()
     if timer <= 0:
         timer -= 1
-        counter.write("time's up", font=fontsetup,)
+        counter.write("Finished", font=fontsetup,)
         gamedone(scorevalue)
         timerUp = True
     else:
@@ -136,7 +139,8 @@ def gamedone(scorevalue):
     ball6.hideturtle()
     scorechanger.right(90)
     scorechanger.forward(110)
-    scorechanger.write("Final score:", font=fontsetup)
+    scorechanger.clear()
+    scorechanger.write("Final score: " + str(scorevalue), font=fontsetup)
 
 def scoreadd(score):
     global scorevalue
@@ -199,11 +203,12 @@ def ball6_click(ball1color, ball1):
     else:
         scoreadd(score)
 
-def gamestart():
+def gamestart(ball1, ball2):
     startgame.hideturtle()
     start_text.clear()
     ball_fillcolor()
     countdown()
+
 
 #Run functions
 #-----function calls----- problem with onclick?
