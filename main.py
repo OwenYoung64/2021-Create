@@ -9,7 +9,7 @@ timer = 30
 score = 0
 scorevalue = 0
 counternumber = 1000
-fontsetup = ("Arial", 15, "normal",)
+fontsetup = ("Arial", 20, "normal",)
 timerup = False
 scorechanger = trtl.Turtle()
 startgame = trtl.Turtle()
@@ -92,7 +92,6 @@ ball6.penup()
 ball6.turtlesize(5)
 ball6.forward(250)
 
-
 #Functions
 
 def ball_fillcolor():
@@ -148,7 +147,7 @@ def scoreadd(score):
     score += 100
     addedscore = score + scorevalue
     scorechanger.clear()
-    scorechanger.write(scorevalue + score)
+    scorechanger.write(scorevalue + score, font=fontsetup)
     scorevalue = addedscore
     ball_fillcolor()
 
@@ -158,7 +157,7 @@ def scoresubtract(score):
     score -= 100
     addedscore = score + scorevalue
     scorechanger.clear()
-    scorechanger.write(scorevalue + score)
+    scorechanger.write(scorevalue + score, font=fontsetup)
     scorevalue = addedscore
 
 def ball1_click(ball2color, ball1):
