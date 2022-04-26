@@ -160,13 +160,16 @@ def scoresubtract(score):
     scorechanger.write(scorevalue + score, font=fontsetup)
     scorevalue = addedscore
 
-def ball1_click(ball2color, ball1):
+def ball_click(ballcolor, ball1):
     color = "red"
-    if ball1color == color:
-        scoresubtract(score)
-    else:
-        scoreadd(score)
-
+    global ball1color, ball2color, ball3color, ball4color, ball5color, ball6color
+    list = [ball1color, ball2color, ball3color, ball4color, ball5color, ball6color]
+    for i in list:
+        if i == color:
+            scoresubtract(score)
+        else:
+            scoreadd(score)
+'''
 def ball2_click(ball1color, ball1):
     color = "red"
     if ball2color == color:
@@ -201,6 +204,7 @@ def ball6_click(ball1color, ball1):
         scoresubtract(score)
     else:
         scoreadd(score)
+        '''
 
 def gamestart(ball1, ball2):
     startgame.hideturtle()
@@ -213,10 +217,12 @@ def gamestart(ball1, ball2):
 #-----function calls----- problem with onclick?
 wn.listen()
 startgame.onclick(gamestart)
-ball1.onclick(ball1_click)
+ball1.onclick(ball_click)
+'''
 ball2.onclick(ball2_click)
 ball3.onclick(ball3_click)
 ball4.onclick(ball4_click)
 ball5.onclick(ball5_click)
 ball6.onclick(ball6_click)
+'''
 wn.mainloop()
