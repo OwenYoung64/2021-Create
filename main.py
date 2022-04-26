@@ -218,11 +218,9 @@ def gamestart(ball1, ball2):
 wn.listen()
 startgame.onclick(gamestart)
 ball1.onclick(ball_click)
-'''
-ball2.onclick(ball2_click)
-ball3.onclick(ball3_click)
-ball4.onclick(ball4_click)
-ball5.onclick(ball5_click)
-ball6.onclick(ball6_click)
-'''
+ball2.onclick(ball_click)
+ball3.onclick(ball_click)
+ball4.onclick(ball_click)
+ball5.onclick(ball_click)
+ball6.onclick(ball_click)
 wn.mainloop()
